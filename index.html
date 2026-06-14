@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nitin D. Tendulkar | Program & Project Management Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c2530;
+    --paper: #f7f5f0;
+    --panel: #ffffff;
+    --rule: #d8d3c8;
+    --accent: #8a3324;
+    --accent-soft: #c9b8a8;
+    --muted: #6b7280;
+    --ledger-green: #3f5d4e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ===== HEADER / LEDGER HERO ===== */
+  header {
+    border-bottom: 3px double var(--ink);
+    padding: 56px 0 36px;
+    position: relative;
+  }
+
+  .ledger-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+
+  .header-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  .title-line {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin-top: 10px;
+  }
+
+  .header-meta {
+    text-align: right;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.9;
+    min-width: 220px;
+  }
+
+  .header-meta a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .header-meta a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+
+  /* ===== TICKER / SUMMARY ===== */
+  .summary {
+    padding: 40px 0 48px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 56px;
+  }
+
+  .summary p {
+    font-size: 1.08rem;
+    color: #3a4250;
+    max-width: 620px;
+  }
+
+  .summary p strong { color: var(--ink); }
+
+  .figure-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    border-left: 1px solid var(--rule);
+    padding-left: 28px;
+  }
+
+  .figure {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .figure .num {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--ledger-green);
+    line-height: 1;
+  }
+
+  .figure .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ===== SECTION HEADINGS ===== */
+  section { padding: 56px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+
+  .section-head .index {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent-soft);
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-head h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .section-head .rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ===== EXPERIENCE / JOURNEY ===== */
+  .role {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    padding: 28px 0;
+    border-top: 1px dashed var(--rule);
+  }
+  .role:first-child { border-top: none; padding-top: 0; }
+
+  .role-period {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    padding-top: 4px;
+  }
+
+  .role-org {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 2px;
+  }
+
+  .role-title {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .role-scope {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--ledger-green);
+    background: rgba(63,93,78,0.08);
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  .role ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .role ul li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 0.97rem;
+    color: #3a4250;
+  }
+
+  .role ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent-soft);
+  }
+
+  /* ===== COMPETENCIES ===== */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .comp-item {
+    border: 1px solid var(--rule);
+    background: var(--panel);
+    padding: 16px 18px;
+    font-size: 0.93rem;
+    font-weight: 500;
+    position: relative;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .comp-item:hover {
+    border-color: var(--accent-soft);
+    transform: translateY(-2px);
+  }
+
+  .comp-item::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--ledger-green);
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  /* ===== TWO COLUMN: DIFFERENTIATORS ===== */
+  .diff-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 48px;
+  }
+
+  .diff-item {
+    border-top: 2px solid var(--ink);
+    padding-top: 14px;
+  }
+
+  .diff-item h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .diff-item p {
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  /* ===== AWARDS / ACADEMICS / CERTS - TABLE STYLE ===== */
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .cred-col h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .cred-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 9px 0;
+    font-size: 0.92rem;
+    border-bottom: 1px dotted var(--rule);
+    gap: 12px;
+  }
+
+  .cred-row span:first-child { color: var(--ink); }
+  .cred-row span:last-child {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ===== FOOTER / CONTACT ===== */
+  footer {
+    padding: 56px 0 64px;
+    text-align: center;
+  }
+
+  footer .signoff {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+  }
+
+  .contact-links a {
+    color: var(--ink);
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--rule);
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .contact-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .footer-fine {
+    margin-top: 36px;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 760px) {
+    .wrap { padding: 0 20px; }
+    .header-grid { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .header-meta { text-align: left; }
+    .summary { grid-template-columns: 1fr; gap: 32px; }
+    .figure-stack { flex-direction: row; border-left: none; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 24px; gap: 32px; flex-wrap: wrap; }
+    .role { grid-template-columns: 1fr; gap: 8px; }
+    .diff-list { grid-template-columns: 1fr; }
+    .credentials-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+
+  a:focus-visible, .comp-item:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="ledger-tag">Program & Project Management — BFSI Sector</div>
+    <div class="header-grid">
+      <div>
+        <h1>Nitin D.<br>Tendulkar</h1>
+        <div class="title-line">Vice President, BDTS Corporate — YES Bank Limited</div>
+      </div>
+      <div class="header-meta">
+        <div>+91&nbsp;9324&nbsp;732&nbsp;439</div>
+        <div><a href="mailto:nitind.tendulkar@gmail.com">nitind.tendulkar@gmail.com</a></div>
+        <div><a href="https://www.linkedin.com/in/nitin10dulkar" target="_blank" rel="noopener">LinkedIn Profile</a></div>
+        <div><a href="https://tinyurl.com/NitinTProfile" target="_blank" rel="noopener">Extended Profile</a></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    <p>
+      A results-driven technocrat with <strong>over 20 years of experience</strong> in software program and
+      project management within the banking and financial sector. Proven track record of leading
+      large-scale, high-impact initiatives — from <strong>Escrow and Digital Collections</strong> to
+      <strong>NPCI, NACH and government scheme automation</strong> — while holding firm on timelines,
+      quality and budget. Known for translating complex stakeholder landscapes into governed,
+      delivered outcomes.
+    </p>
+    <div class="figure-stack">
+      <div class="figure">
+        <span class="num">20+</span>
+        <span class="label">Years in BFSI Delivery</span>
+      </div>
+      <div class="figure">
+        <span class="num">4</span>
+        <span class="label">Organisations, One Trajectory</span>
+      </div>
+      <div class="figure">
+        <span class="num">5</span>
+        <span class="label">Awards for Excellence</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOURNEY / EXPERIENCE -->
+  <section>
+    <div class="section-head">
+      <span class="index">01</span>
+      <h2>The Journey</h2>
+      <span class="rule"></span>
+    </div>
+
+    <div class="role">
+      <div class="role-period">Apr 2018 — Onwards</div>
+      <div>
+        <div class="role-org">YES Bank Limited</div>
+        <div class="role-title">Vice President — BDTS Corporate</div>
+        <div class="role-scope">Escrow · Govt. Agency & Scheme Business · Digital Collection · NPCI–NACH</div>
+        <ul>
+          <li>Subject-Matter Expert leading complex software projects across multiple banking functions.</li>
+          <li>Manages the full project lifecycle — planning, execution and post-launch support — anchored to business objectives.</li>
+          <li>Applies Agile, Scrum and Waterfall methodologies, tailoring process to project need.</li>
+          <li>Owns resource allocation, risk mitigation and cross-functional leadership for on-time, high-quality delivery.</li>
+          <li>Bridges technical and business teams as a trusted stakeholder communicator and conflict resolver.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="role-period">May 2007 — Apr 2018</div>
+      <div>
+        <div class="role-org">HDFC Bank Limited</div>
+        <div class="role-title">Senior Manager — BTG WBO</div>
+        <div class="role-scope">NPCI–CTS · Govt. Scheme Business · Currency Chest</div>
+        <ul>
+          <li>Developed and implemented complex software solutions across core banking operations.</li>
+          <li>Translated business requirements into technical specifications for optimal performance.</li>
+          <li>Deep proficiency across programming frameworks and the full SDLC.</li>
+          <li>Mentored junior team members and embedded best practices for high-quality delivery.</li>
+          <li>Recognised for problem-solving and scalable solutions aligned to business goals.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="role-period">Jan 2005 — Apr 2007</div>
+      <div>
+        <div class="role-org">Aplab Limited</div>
+        <div class="role-title">Senior Software Engineer</div>
+        <div class="role-scope">Image-based Cheque Clearing & Document Processing</div>
+        <ul>
+          <li>Designed and maintained software applications with a strong foundation in algorithms and data structures.</li>
+          <li>Collaborated across teams to gather requirements, implement features and resolve issues.</li>
+          <li>Delivered robust, scalable solutions within Agile development environments.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="role-period">Jan 2003 — Dec 2004</div>
+      <div>
+        <div class="role-org">Systrain Software Pvt Ltd</div>
+        <div class="role-title">Software Developer</div>
+        <div class="role-scope">NBFC — Mini Core Banking</div>
+        <ul>
+          <li>Built foundational experience in object-oriented programming using VB, Java and .NET.</li>
+          <li>Applied structured development methodologies with a focus on clean, efficient code.</li>
+          <li>Brought a quick-learning, collaborative approach to a fast-moving development environment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY DIFFERENTIATORS -->
+  <section>
+    <div class="section-head">
+      <span class="index">02</span>
+      <h2>Key Differentiators</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="diff-list">
+      <div class="diff-item">
+        <h3>Strategic Digital Transformation Leadership</h3>
+        <p>Over 20 years spearheading enterprise-scale software programs and digital modernization within the BFSI sector.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Program Governance & PMO Excellence</h3>
+        <p>Expert in establishing governance frameworks that align business objectives with IT execution.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Digital Banking Expertise</h3>
+        <p>Deep domain knowledge across digital payments, Escrow management and government scheme automation — NPCI, NACH, CTS, PFMS, GEM, TaxPay.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Operational Efficiency & Cost Optimization</h3>
+        <p>Demonstrated success enhancing process efficiency and reducing operational overhead through strategic automation.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Cross-Functional Team Leadership</h3>
+        <p>Proven ability to lead and mentor high-performing teams delivering complex, high-impact digital solutions.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Agile & DevOps Advocacy</h3>
+        <p>Strong proponent of Agile and DevOps to accelerate delivery cycles and improve system resilience.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Stakeholder & Vendor Management</h3>
+        <p>Skilled in navigating complex stakeholder landscapes and managing vendor ecosystems for seamless delivery.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Integration & Regulatory Compliance</h3>
+        <p>Extensive experience integrating banking systems and APIs while ensuring strict regulatory adherence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE COMPETENCIES -->
+  <section>
+    <div class="section-head">
+      <span class="index">03</span>
+      <h2>Core Competencies</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-item">Program & Project Management</div>
+      <div class="comp-item">Stakeholder Management</div>
+      <div class="comp-item">Generative AI</div>
+      <div class="comp-item">Strategy Formulation</div>
+      <div class="comp-item">Budget Management</div>
+      <div class="comp-item">Vibe Coding</div>
+      <div class="comp-item">Delivery Management</div>
+      <div class="comp-item">Directive & Controlling PMO</div>
+      <div class="comp-item">Software Engineering</div>
+      <div class="comp-item">Team Management</div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS: ACHIEVEMENTS / ACADEMICS / CERTIFICATIONS -->
+  <section>
+    <div class="section-head">
+      <span class="index">04</span>
+      <h2>Credentials</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="credentials-grid">
+      <div class="cred-col">
+        <h3>Achievements</h3>
+        <div class="cred-row"><span>Extra Miler — YES Bank</span><span>2026</span></div>
+        <div class="cred-row"><span>Circle of Excellence — YES Bank</span><span>2024</span></div>
+        <div class="cred-row"><span>Gold Award — HDFC Bank</span><span>2017</span></div>
+        <div class="cred-row"><span>Gold Award — HDFC Bank</span><span>2014</span></div>
+        <div class="cred-row"><span>Silver Award — HDFC Bank</span><span>2013</span></div>
+      </div>
+      <div class="cred-col">
+        <h3>Academics</h3>
+        <div class="cred-row"><span>MBA — SAP & PMP</span><span>2013</span></div>
+        <div class="cred-row"><span>Diploma in Engineering</span><span>2001</span></div>
+      </div>
+      <div class="cred-col">
+        <h3>Certifications</h3>
+        <div class="cred-row"><span>Generative AI Mastermind — Outskill</span><span>2025</span></div>
+        <div class="cred-row"><span>Foundation of AI — IIT Bombay</span><span>2025</span></div>
+        <div class="cred-row"><span>Agile Project Management — Udemy</span><span>2022</span></div>
+        <div class="cred-row"><span>Business Analyst Competency — HDFC</span><span>2014</span></div>
+        <div class="cred-row"><span>Diploma in Computer Application — CDAC</span><span>2002</span></div>
+        <div class="cred-row"><span>.NET Technologies — Aptech</span><span>2004</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="signoff">Open to conversations on digital transformation, PMO strategy & delivery excellence.</div>
+    <div class="contact-links">
+      <a href="mailto:nitind.tendulkar@gmail.com">Email</a>
+      <a href="tel:+919324732439">Call</a>
+      <a href="https://www.linkedin.com/in/nitin10dulkar" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://tinyurl.com/NitinTProfile" target="_blank" rel="noopener">Extended Profile</a>
+    </div>
+    <div class="footer-fine">Nitin D. Tendulkar — Mumbai, India</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
