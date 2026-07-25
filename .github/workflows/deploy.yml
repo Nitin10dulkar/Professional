@@ -1,0 +1,53 @@
+name: Deploy combined site
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout profile site
+        uses: actions/checkout@v4
+        with:
+          path: main-site
+
+      - name: Checkout sadaksathi app
+        uses: actions/checkout@v4
+        with:
+          repository: Nitin10dulkar/sadaksathi
+          path: sadaksathi-site
+
+      - name: Combine into one folder
+        run: |
+          mkdir -p combined
+          cp -r main-site/* combined/
+          mkdir -p combined/sadaksaathi
+          cp -r sadaksathi-site/* combined/sadaksaathi/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: combined
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
